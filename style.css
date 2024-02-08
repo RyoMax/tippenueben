@@ -1,0 +1,146 @@
+body {
+    /* font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;  */
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 100px;
+}
+
+h1 {
+    padding-left: 50px;
+    text-decoration: underline;
+    margin-bottom: 40px;;
+}
+
+@media (max-width: 900px) {
+    /* For mobile phones: */
+    h1 {
+      text-align: center;
+      padding: 0;
+    }
+  }
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+.startstopBtn {
+    padding: 10px;
+    background-color: blueviolet;
+    color: antiquewhite;
+    text-transform: capitalize;
+    font-weight: 800;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+.startstopBtn:active {
+    background-color: rgb(69, 22, 114);
+    color: darkgreen;
+}
+
+.kontrollBtn {
+    padding: 7px;
+    background-color: darkorchid;
+    color: antiquewhite;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.hs-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: darkgreen;
+}
+
+.start {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.intro {
+    font-size: 1.1rem;
+}
+
+.intro ul {
+    margin: 40px 0;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputBlock {
+    width: 80%;
+    min-height: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.inputBlock textarea {
+    width: 80%;
+    min-height: 100px;
+    border: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding: 10px;
+    margin-top: 30px;
+    font-size: 1.1rem;
+}
+
+.inputBlock img {
+    width: 100%;
+    object-fit: contain;
+    border: 1px dashed black;
+}
+
+.inputBlock .missing {
+    background-color: darkgreen;
+    color: antiquewhite;
+}
+
+.inputBlock .missing::after{
+    content: "\00a0"; /* Non-breaking space */
+    background-color: red;
+    display: inline-block;
+    width: 1em;
+}
+
+.inputBlock .tip {
+    color: rgb(102, 100, 100);
+    position: relative;
+    top: -10px;
+}
+
+.solved {
+    border: 5px solid darkgreen;
+}
+
+.hide {
+    display: none;
+}
+
+.finished {
+    margin-top: 100px;
+    
+}
+
+.time {
+    color: darkgreen;
+    font-size: 36px;
+    font-weight: 800;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Übung tippen</title>
+</head>
+<body>
+    <h1>Übung Tastatur I</h1>
+    <main>
+        <div class="hs-container hide">
+            <span>Highscore:</span>
+            <span id="score"></span>
+        </div>
+        <div class="intro">
+            <p>In dieser Übung geht es um das richtige Tippen. Im Folgenden finden sich unterschiedlich lange Texte mit Sonderzeichen. Versuche, die Texte fehlerfrei in das entsprechende Eingabefeld abzutippen. Wenn du die Eingabe überprüfen möchtest, drücke den Button "Kontrolle":</p>
+            <ul>
+                <li>Wenn es einen Fehler gibt, erscheint unter der Eingabebox der korrekte Textteil bis zur falschen Stelle.</li>
+                <li>Wenn alles richtig ist, erscheint ein grüner Rahmen, und du kannst beim nächsten Block weitermachen.</li>
+            </ul>
+            <p>Wenn alle Blöcke korrekt abgetippt sind, könnt ihr am Ende der Seite den Test beenden und eure Zeit sehen.<br> <em>  Mach den Test öfter und versuche <b>schneller</b> zu werden.  </em></p>
+
+        </div>
+        <div class="start">
+            <h2>Wenn du bereit bist klick auf START</h2>
+            <button class="startstopBtn" onclick="start()">Start</button>
+        </div>
+
+        <form action="#" onsubmit="submitForm(event)" class="hide">
+            <section class="inputBlock">
+                <h2>Sonderzeichen in Reihe</h2>
+                <img src="./smilies.png" alt="Smilies als Zeichen">
+                <textarea></textarea>
+                <button class="kontrollBtn" id="Reihe">Kontrolle</button>
+                <p class="missing hide"></p>
+            </section>
+            <section class="inputBlock">
+                <h2>Sonderzeichen im Satz</h2>
+                <img src="./satz.png" alt="einfacher Satz">
+                <textarea></textarea>
+                <button class="kontrollBtn" id="Satz">Kontrolle</button>
+                <p class="missing hide"></p>
+            </section>
+            <section class="inputBlock">
+                <h2>E-Mail</h2>
+                <img src="./email.png" alt="E-Mail">
+                <textarea></textarea>
+                <button class="kontrollBtn" id="EMail">Kontrolle</button>
+                <p class="missing hide"></p>
+            </section>
+            <section class="inputBlock">
+                <div>
+                    <h2>Aus der Welt von HTML</h2>
+                    <span class="tip">Hinweis: Beachtet die Zeilenumbrüche</span>
+                </div>
+                <img src="./html.png" alt="">
+                <textarea ></textarea>
+                <button class="kontrollBtn" id="HTML">Kontrolle</button>
+                <p class="missing hide"></p>
+            </section>
+            <section class="inputBlock">
+                <div>
+                    <h2>Jetzt mehr Text</h2>
+                    <span class="tip">Hinweis: Hier brauchst du keine Zeilenubrüche zu machen</span>
+                </div>
+                <img src="./langerText.png" alt="langer Text">
+                <textarea></textarea>
+                <button class="kontrollBtn" id="LangerText">Kontrolle</button>
+                <p class="missing hide"></p>
+            </section>
+            <button onclick="stop()" class="startstopBtn hide">Abschicken</button>
+        </form>
+        <div class="finished hide">
+            <h2>Super du hast es gelöst!</h2>
+            <p>Deine Zeit: <span class="time"></span> </p>
+            <h3 class="hide">Neuer Highscore :-) </h3>
+            <button onclick="startAgain()" class="startstopBtn">Nochmal?</button>
+        </div>
+        <script src="./script.js"></script>
+    </main>
+    </body>
+</html>
