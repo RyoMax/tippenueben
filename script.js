@@ -12,10 +12,11 @@ const solution = {
     Satz: 'Anna\'s neues E-Mail-Passwort lautet: Sicher!#_1234.',
     EMail: 'hans-gretel@waldweg.de',
     HTML: '<!DOCTYPE html>\n<html lang="de">\n<head>\n<title>Meine HTML-Seite</title>\n</head>\n<body>\n<h1>Willkommen auf meiner Webseite</h1>\n<p>Dies ist ein einfacher HTML-Absatz.</p>\n</body>\n</html>',
-    LangerText: '"Prof. Elm fand um 22:03 Uhr eine Notiz: "Geheimcode: [2*H2O + 3xNa] - @Elixier#1". "Rätselhaft", murmelte er und tippte eine E-Mail: "Brauche Hilfe bei <Code> Lösung; Treffen um 9:00?". Ein schnelles pling signalisierte die Zustimmung seiner Kollegin: "Ja, schau in {Buch_S.47} > wichtige Hinweise." Mit einem Lächeln und einem Klick auf die Schaltfläche Senden bereitete er sich auf die Entschlüsselung vor."'
+    LangerText: '"Prof. Elm fand um 22:03 Uhr eine Notiz: \'Geheimcode: [2*H2O + 3xNa] - @Elixier#1\'. \'Rätselhaft\', murmelte er und tippte eine E-Mail: \'Brauche Hilfe bei <Code> Lösung; Treffen um 9:00?\'. Ein schnelles pling signalisierte die Zustimmung seiner Kollegin: \'Ja, schau in {Buch_S.47} > wichtige Hinweise.\' Mit einem Lächeln und einem Klick auf die Schaltfläche Senden bereitete er sich auf die Entschlüsselung vor."'
 }
 
-
+// Text zu Kopieren ohne Kommentierungszeichen
+// "Prof. Elm fand um 22:03 Uhr eine Notiz: 'Geheimcode: [2*H2O + 3xNa] - @Elixier#1'. 'Rätselhaft', murmelte er und tippte eine E-Mail: 'Brauche Hilfe bei <Code> Lösung; Treffen um 9:00?'. Ein schnelles pling signalisierte die Zustimmung seiner Kollegin: 'Ja, schau in {Buch_S.47} > wichtige Hinweise.' Mit einem Lächeln und einem Klick auf die Schaltfläche Senden bereitete er sich auf die Entschlüsselung vor."
 
 
 function submitForm(e){
