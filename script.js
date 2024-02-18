@@ -116,11 +116,11 @@ function checkText(e){
 
 // Highscore functions
 function getHighscore(){
-   return localStorage.getItem('highscore')
+   return localStorage.getItem('highscore-tippen')
 }
 
 function setHighscore(newScore){
-    localStorage.setItem('highscore', newScore)
+    localStorage.setItem('highscore-tippen', newScore)
 }
 
 function compareHighscore(newScore){
