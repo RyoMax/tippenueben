@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Typing Exercise</title>
+</head>
+<body>
+    <nav>
+        <a href="../">
+            <img src="../pics/icon/ger.jpg" alt="flag icon">
+            DE
+        </a>
+    </nav>
+    <h1>Keyboard exercise I</h1>
+    <main>
+        <div class="hs-container hide">
+            <span>Highscore:</span>
+            <span id="score"></span>
+        </div>
+        <div class="intro">
+            <p>This exercise is about typing correctly. Below you will find texts of different lengths with special characters. Try to type the texts correctly into the corresponding input field. If you want to check your input, press the "Check" button:</p>
+            <ul>
+                <li>If there is an error, the correct part of the text appears below the input box right until the incorrect part.</li>
+                <li>If everything is correct, a green frame will appear and you can continue with the next block.</li>
+            </ul>
+            <p>If all blocks are typed correctly, you can finish the test at the bottom of the page and check your time.<br> <em>  Do the test more often and try to become <b>faster</b>. </em></p>
+
+        </div>
+        <div class="start">
+            <h2>Press START to begin</h2>
+            <button class="startstopBtn" onclick="start()">Start</button>
+        </div>
+
+        <form action="#" onsubmit="submitForm(event)" class="hide">
+            <section class="inputBlock">
+                <h2>Special characters in row</h2>
+                <img src="../pics/smilies.png" alt="Smilies als Zeichen">
+                <textarea></textarea>
+                <button class="kontrollBtn" id="Reihe">Check</button>
+                <p class="missing hide"></p>
+            </section>
+            <section class="inputBlock">
+                <h2>Special characters in a sentence</h2>
+                <img src="../pics/en/sentence.png" alt="einfacher Satz">
+                <textarea></textarea>
+                <button class="kontrollBtn" id="Satz">Check</button>
+                <p class="missing hide"></p>
+            </section>
+            <section class="inputBlock">
+                <h2>E-Mail</h2>
+                <img src="../pics/email.png" alt="E-Mail">
+                <textarea></textarea>
+                <button class="kontrollBtn" id="EMail">Check</button>
+                <p class="missing hide"></p>
+            </section>
+            <section class="inputBlock">
+                <div>
+                    <h2>From the world of HTML</h2>
+                    <span class="tip">Hinweis: Beachtet die Zeilenumbrüche</span>
+                </div>
+                <img src="../pics/html.png" alt="">
+                <textarea ></textarea>
+                <button class="kontrollBtn" id="HTML">Check</button>
+                <p class="missing hide"></p>
+            </section>
+            <section class="inputBlock">
+                <div>
+                    <h2>Now a bit more text</h2>
+                    <span class="tip">Note: You do not need to make any line breaks in this case</span>
+                </div>
+                <img src="../pics/en/longText.png" alt="langer Text">
+                <textarea></textarea>
+                <button class="kontrollBtn" id="LangerText">Check</button>
+                <p class="missing hide"></p>
+            </section>
+            <button onclick="stop()" class="startstopBtn hide">Submit</button>
+        </form>
+        <div class="finished hide">
+            <h2>Amazing, you're done!</h2>
+            <p>Your time: <span class="time"></span> </p>
+            <h3 class="hide">New Highscore :-) </h3>
+            <button onclick="startAgain()" class="startstopBtn">Try again?</button>
+        </div>
+        <script src="../script.js"></script>
+    </main>
+    </body>
+</html>
