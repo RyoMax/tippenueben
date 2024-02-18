@@ -8,11 +8,21 @@ let solved = 0
 let startTime
 
 const solution = {
-    Reihe: ':-):-D:-O:-P;-)=):D=O=P@-@-#-#',
-    Satz: 'Anna\'s neues E-Mail-Passwort lautet: Sicher!#_1234.',
-    EMail: 'hans-gretel@waldweg.de',
-    HTML: '<!DOCTYPE html>\n<html lang="de">\n<head>\n<title>Meine HTML-Seite</title>\n</head>\n<body>\n<h1>Willkommen auf meiner Webseite</h1>\n<p>Dies ist ein einfacher HTML-Absatz.</p>\n</body>\n</html>',
-    LangerText: '"Prof. Elm fand um 22:03 Uhr eine Notiz: \'Geheimcode: [2*H2O + 3xNa] - @Elixier#1\'. \'Rätselhaft\', murmelte er und tippte eine E-Mail: \'Brauche Hilfe bei <Code> Lösung; Treffen um 9:00?\'. Ein schnelles pling signalisierte die Zustimmung seiner Kollegin: \'Ja, schau in {Buch_S.47} > wichtige Hinweise.\' Mit einem Lächeln und einem Klick auf die Schaltfläche Senden bereitete er sich auf die Entschlüsselung vor."'
+    de:{
+
+        Reihe: ':-):-D:-O:-P;-)=):D=O=P@-@-#-#',
+        Satz: 'Anna\'s neues E-Mail-Passwort lautet: Sicher!#_1234.',
+        EMail: 'hans-gretel@waldweg.de',
+        HTML: '<!DOCTYPE html>\n<html lang="de">\n<head>\n<title>Meine HTML-Seite</title>\n</head>\n<body>\n<h1>Willkommen auf meiner Webseite</h1>\n<p>Dies ist ein einfacher HTML-Absatz.</p>\n</body>\n</html>',
+        LangerText: `"Prof. Elm fand um 22:03 Uhr eine Notiz: 'Geheimcode: [2*H2O + 3xNa] - @Elixier#1'. 'Rätselhaft', murmelte er und tippte eine E-Mail: 'Brauche Hilfe bei <Code> Lösung; Treffen um 9:00?'. Ein schnelles pling signalisierte die Zustimmung seiner Kollegin: 'Ja, schau in {Buch_S.47} > wichtige Hinweise.' Mit einem Lächeln und einem Klick auf die Schaltfläche Senden bereitete er sich auf die Entschlüsselung vor."`
+    },
+    en:{
+        Reihe: ':-):-D:-O:-P;-)=):D=O=P@-@-#-#',
+        Satz: `Anna's new E-Mail Password is: Secure!#_1234.`,
+        EMail: 'hans-gretel@waldweg.de',
+        HTML: '<!DOCTYPE html>\n<html lang="de">\n<head>\n<title>Meine HTML-Seite</title>\n</head>\n<body>\n<h1>Willkommen auf meiner Webseite</h1>\n<p>Dies ist ein einfacher HTML-Absatz.</p>\n</body>\n</html>',
+        LangerText: `"Prof. Elm found a note at 22:03: 'Secret code: [2*H2O + 3xNa] - @Elixir#1'. 'Puzzling,' he muttered and typed an email: 'Need help with <code> solution; meeting at 9:00?'. A quick *ding* signaled his colleague's approval: 'Yes, check {Book_S.47} > important clues.' With a smile and a click on the Send button, he prepared to decode."`
+    }
 }
 
 // Text zu Kopieren ohne Kommentierungszeichen
@@ -71,9 +81,11 @@ function checkText(e){
     const input = e.target.closest('.inputBlock')
     const missingP = input.querySelector('.missing');
     const textArea = input.querySelector('textarea')
-    const solutionText = solution[e.target.id]
+    // ermitteln der Document-Sprache zum verwenden des jeweiligen checks
+    const lang = document.querySelector("html").attributes.lang.value
+    const solutionText = solution[lang][e.target.id]
     
-    if (textArea.value.trim() ===solutionText){
+    if (textArea.value.trim() === solutionText){
         input.classList.add('solved')
         textArea.disabled=true
         missingP.textContent = '';
