@@ -18,7 +18,7 @@ Just HTML, CSS, Javascript
 
 ## Setup and Usage
 
-Just visit the [GitHub Pages site](https://yourusername.github.io/yourrepositoryname/). There, you will find the live version of the project ready for use without any setup required.
+Just visit the [GitHub Pages site](https://puckfried.github.io/tippenueben/). There, you will find the live version of the project ready for use without any setup required.
 
 
 ## Contributing
