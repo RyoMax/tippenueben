@@ -7,21 +7,21 @@ nav{
     position: fixed;
     top: 0;
     font-size: 2rem;
-    padding-top: 20px;
-    img{
+    padding-top: 20px;}
+nav img{
         height: 22px;
     }
-    a{
+
+nav a{
         color: black;
         text-decoration: none;
         font-weight: bold;
         padding: 20px;
 
-    }
-    a:hover{
+}
+nav a:hover{
         color: blueviolet;
     }
-}
 
 h1 {
     padding-left: 50px;
@@ -30,13 +30,6 @@ h1 {
     text-align: center;
 }
 
-@media (max-width: 900px) {
-    /* For mobile phones: */
-    h1 {
-      text-align: center;
-      padding: 0;
-    }
-  }
 
 main {
     max-width: 800px;
@@ -112,6 +105,20 @@ form {
     text-align: center;
 }
 
+
+.inputBlock pre {
+    font-size: 1.1rem;
+    font-family: monospace;
+    text-align: left;
+    padding:10px;
+    border: 1px dashed black;
+}
+
+.inputBlock .linebreak {
+    white-space: pre-wrap;
+}
+
+
 .inputBlock textarea {
     width: 90%;
     min-height: 100px;
@@ -164,3 +171,26 @@ form {
     font-size: 36px;
     font-weight: 800;
 }
+
+@media (max-width: 900px) {
+    /* For mobile phones: */
+    h1 {
+      text-align: center;
+      padding: 0;
+    }
+
+    .inputBlock pre {
+        font-size: 1rem;
+    }
+  }
+  @media (max-width: 500px) {
+    /* For mobile phones: */
+    h1 {
+      text-align: center;
+      padding: 0;
+    }
+
+    .inputBlock pre {
+        font-size: 0.7rem;
+    }
+  }

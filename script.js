@@ -3,6 +3,10 @@ const stopBtn = document.querySelector('form .startstopBtn')
 const finishDiv = document.querySelector('.finished')
 const form = document.querySelector('form')
 const highscoreContainer = document.querySelector('.hs-container')
+const textareas = document.querySelectorAll('textarea.inputTxt')
+const inputDivs = document.querySelectorAll('.inputBlock')
+const lang = document.querySelector("html").attributes.lang.value
+const preElems = document.querySelectorAll('.solutionText')
 
 let solved = 0
 let startTime
@@ -33,6 +37,13 @@ function submitForm(e){
     e.preventDefault()
 }
 
+// Für Vorlagentexte werden Mausevents abgeschaltet
+function disableMouseEvents(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+}
+
 
 function start(){
 // Startet das erste Spiel, Intro ausgeblendet, Formular eingeblendet, der Timer gesetzt
@@ -61,8 +72,6 @@ function stop(){
 
 function startAgain(){
 // Neues Spiel, Formular zurückgesetzt und eingeblendet, Timer erneut gestartet
-    const textareas = document.querySelectorAll('textarea')
-    const inputDivs = document.querySelectorAll('.inputBlock')
 
     textareas.forEach((area => {
         area.value=''
@@ -76,13 +85,24 @@ function startAgain(){
     displayHighscore()
 }
 
+// Vorlagentext in Textblöcke einfügen
+function createText(){
+    inputDivs.forEach(div => {
+       const id = div.querySelector('button').id
+       const pre = div.querySelector('pre')
+       pre.textContent = solution[lang][id]
+    })
+}
+
+
+
+
 function checkText(e){
 // Eingabe überprüfen, Formular deaktivieren bei Erfolg bzw. Fehler anzeigen 
     const input = e.target.closest('.inputBlock')
     const missingP = input.querySelector('.missing');
-    const textArea = input.querySelector('textarea')
+    const textArea = input.querySelector('textarea.inputTxt')
     // ermitteln der Document-Sprache zum verwenden des jeweiligen checks
-    const lang = document.querySelector("html").attributes.lang.value
     const solutionText = solution[lang][e.target.id]
     
     if (textArea.value.trim() === solutionText){
@@ -148,11 +168,16 @@ function displayHighscore(){
 
 // Beim Spielstart
 displayHighscore()
-
+createText()
 
 for (let i=0; i<buttons.length; i++){
     buttons[i].addEventListener('click', (e) => checkText(e))
 }
+
+preElems.forEach (pre => {
+    pre.addEventListener('mousedown', disableMouseEvents);
+    pre.addEventListener('contextmenu', disableMouseEvents);
+})
 
 
 
